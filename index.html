@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">  
+<head>
+  <meta charset="utf-8">
+  <title>The BioDigital Human Particle System</title>
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/default.css" id="theme"> 
+  <link rel="stylesheet" href="plugin/highlight/styles/docco.css"> 
+  <link rel="icon" type="image/png" href="img/WebGL.png">
+  <style>
+
+    .reveal .slide-number {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .reveal section img {
+      max-height: 400px;
+    }
+
+    .reveal pre {
+      box-shadow: none;
+    }
+
+    .reveal .me {
+      margin-top: 42px;
+    }
+
+    .reveal ul ul {
+      font-size: 0.8em;
+    }
+
+    iframe {
+      width: 100%;
+      height: 12em;
+    }
+
+    .reveal section a.example-menu-button {
+        display: inline-block;
+        background-color: gray;
+        color: white;
+        text-decoration: none;
+        padding: 0.2em;
+        font-size: 0.7em;
+        margin: 0.4em 0.2em;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>The BioDigital Human Particle System</h1>
+        <p>Tarek Sherif</p>
+        <p>BioDigital</p>
+      </section>
+
+      <section>
+        <h2>BioDigital</h2>
+        <ul>
+          <li>Big, high-detail anatomy visualizations</li>
+          <li>
+            Uses: 
+            <ul>
+              <li>Education</li>
+              <li>Training</li>
+              <li>Marketing</li>
+            </ul>
+          </li>
+        </ul>
+        <img src="img/human.png">
+      </section>
+
+      <section>
+        <h2>BioDigital</h2>
+        <ul>
+          <li>Clients frequently want to visualize</li>
+          <li>
+            <ul>
+              <li>Fluid moving through vessels</li>
+              <li>Molecular interactions</li>
+              <li>Cellular activity</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Particle System</h2>
+        <ul>
+          <li>These effects can be efficient rendered with a particle simulation</li>
+          <li>
+            <ul>
+              <li>Draw points</li>
+              <li>Fine-grained simulation components to apply forces/constraints</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Before the Particle System</h2>
+        <ul>
+          <li>Particles would be rendered as low-res spheres</li>
+          <li>Each particle would be manually animated by an artist</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Requirements for the Particle System</h2>
+        <ul>
+          <li>Maximize artist control</li>
+          <li>Acturately represent anatomical phenomenon</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Architecture</h2>
+        <ul>
+          <li>Particles are simply separate arrays of properties</li>
+          <ul>
+            <li>Position</li>
+            <li>Velocity</li>
+            <li>Color</li>
+            <li>Age</li>
+          </ul>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Architecture</h2>
+        <ul>
+          <li>Particles updated each frame by components</li>
+          <ul>
+            <li>Creators: Initialize a property</li>
+            <li>Updater: Update a property</li>
+            <li>Constraint: Ensure particle propery remains within bounds</li>
+          </ul>
+        </ul>
+        <li>Each must be minimal to allow artists to combin as desired</li>
+      </section>
+
+      <section>
+        <h2>Updates Over Time</h2>
+        <ul>
+          <li>Initially pseudo-physical simulation of colored points</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Updates Over Time</h2>
+        <ul>
+          <li>Added sprite texturing</li>
+          <ul>
+            <li>Significantly improved representational quality</li>
+          </ul>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Updates Over Time</h2>
+        <ul>
+          <li>Artists can animated system components over time</li>
+        </ul>
+      </section>
+      
+    </div>
+  </div>
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.min.js"></script>
+  <script src="js/highlight.min.js"></script>
+  <script>
+    Reveal.initialize({
+      history: true,
+      slideNumber: true,
+      controls: false
+    });
+
+    Reveal.addEventListener("slidechanged", function(event) {
+      window.onresize();
+    });
+
+    hljs.initHighlightingOnLoad();
+    
+  </script>
+</body>
+</html>
