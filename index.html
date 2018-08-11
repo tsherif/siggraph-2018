@@ -76,8 +76,8 @@
       <section>
         <h2>BioDigital</h2>
         <ul>
-          <li>Clients frequently want to visualize</li>
           <li>
+            Clients frequently want to visualize
             <ul>
               <li>Fluid moving through vessels</li>
               <li>Molecular interactions</li>
@@ -88,10 +88,14 @@
       </section>
 
       <section>
+        <video src="video/siggraph-nephron.mp4" controls></video>
+      </section>
+
+      <section>
         <h2>Particle System</h2>
         <ul>
-          <li>These effects can be efficient rendered with a particle simulation</li>
           <li>
+            These effects can be efficiently rendered with a particle simulation
             <ul>
               <li>Draw points</li>
               <li>Fine-grained simulation components to apply forces/constraints</li>
@@ -106,6 +110,10 @@
           <li>Particles would be rendered as low-res spheres</li>
           <li>Each particle would be manually animated by an artist</li>
         </ul>
+      </section>
+
+      <section>
+        <video src="video/siggraph-asthma.mp4" controls></video>
       </section>
 
       <section>
@@ -135,35 +143,121 @@
           <li>Particles updated each frame by components</li>
           <ul>
             <li>Creators: Initialize a property</li>
-            <li>Updater: Update a property</li>
-            <li>Constraint: Ensure particle propery remains within bounds</li>
+            <li>Updater: Update a property each frame</li>
+            <li>Constraint: Ensure property remains within bounds</li>
           </ul>
         </ul>
-        <li>Each must be minimal to allow artists to combin as desired</li>
       </section>
 
       <section>
-        <h2>Updates Over Time</h2>
+        <h2>Example Creator</h2>
+        <pre>
+        <code class="javascript">
+          // Initialize position to somewhere in defined ellipsoid
+          {
+            type: "SpherePosition",
+            scale: [5, 10, 5],
+            translate: [2, 4, 3],
+            rotate: [20, 30, 0]
+          }
+        </code>
+        </pre>
+      </section>
+
+      <section>
+        <h2>Example Updater</h2>
+        <pre>
+        <code class="javascript">
+          // Apply force towards/away from given point
+          {
+            type: "RadialForce",
+            positions: [5, 10, 5],
+            force: 10,
+            shape: {
+              type: Sphere",
+              scale: [3, 4, 3]
+            }
+          }
+        </code>
+        </pre>
+      </section>
+
+      <section>
+        <h2>Example Constraint</h2>
+        <pre>
+        <code class="javascript">
+          // Reflect particle velocity if it crosses the plane
+         {
+             type: "ShapeBounce",
+             shape: {
+                 type: "Plane",
+                 rotate: [0, 0, -45],
+                 translate: [-10, -10, 0],
+                 direction: "in"
+             }
+         }
+        </code>
+        </pre>
+      </section>
+
+      <section>
+        <h2>Architecture</h2>
         <ul>
-          <li>Initially pseudo-physical simulation of colored points</li>
+          <li>Each component has a minimal function in the sim</li>
+          <li>Allows artists to combine them in expressive ways</li>
         </ul>
       </section>
 
       <section>
-        <h2>Updates Over Time</h2>
+        <h2>Applications</h2>
         <ul>
-          <li>Added sprite texturing</li>
+          <li>Initially limited to basic processes and ambient effects</li>
+        </ul>
+      </section>
+
+      <section>
+        <video src="video/siggraph-ambient.mp4" controls></video>
+      </section>
+
+      <section>
+        <video src="video/siggraph-basic.mp4" controls></video>
+      </section>
+
+
+      <section>
+        <h2>Applications</h2>
+        <ul>
+          <li>
+            Over time added features that significantly increased quality
+            <ul>
+              <li>Texturing</li>
+              <li>Animate component parameters over time</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <video src="video/siggraph-glow.mp4" controls></video>
+      </section>
+
+      <section>
+        <video src="video/siggraph-beam.mp4" controls></video>
+      </section>
+
+      <section>
+        <video src="video/siggraph-lipid.mp4" controls></video>
+      </section>
+
+      <section>
+        <h1>Thanks!</h1>
+        <div class="credits">
           <ul>
-            <li>Significantly improved representational quality</li>
+            <li><a target="_blank" href="https://twitter.com/thsherif">@thsherif</a></li>
+            <li><a href="mailto:tarek@biodigital.com">tarek@biodigital.com</a></li>
+            <li><a target="_blank" href="https://www.biodigital.com">www.biodigital.com</a></li>
           </ul>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Updates Over Time</h2>
-        <ul>
-          <li>Artists can animated system components over time</li>
-        </ul>
+        </div>
       </section>
       
     </div>
@@ -176,10 +270,6 @@
       history: true,
       slideNumber: true,
       controls: false
-    });
-
-    Reveal.addEventListener("slidechanged", function(event) {
-      window.onresize();
     });
 
     hljs.initHighlightingOnLoad();
