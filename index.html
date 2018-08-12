@@ -60,9 +60,8 @@
       <section>
         <h2>BioDigital</h2>
         <ul>
-          <li>Big, high-detail anatomy visualizations</li>
           <li>
-            Uses: 
+            Detailed anatomy visualizations for: 
             <ul>
               <li>Education</li>
               <li>Training</li>
@@ -117,17 +116,9 @@
       </section>
 
       <section>
-        <h2>Requirements for the Particle System</h2>
-        <ul>
-          <li>Maximize artist control</li>
-          <li>Acturately represent anatomical phenomenon</li>
-        </ul>
-      </section>
-
-      <section>
         <h2>Architecture</h2>
         <ul>
-          <li>Particles are simply separate arrays of properties</li>
+          <li>Particles are separate arrays of properties</li>
           <ul>
             <li>Position</li>
             <li>Velocity</li>
@@ -144,7 +135,7 @@
           <ul>
             <li>Creators: Initialize a property</li>
             <li>Updater: Update a property each frame</li>
-            <li>Constraint: Ensure property remains within bounds</li>
+            <li>Constraint: Ensure a property remains within bounds</li>
           </ul>
         </ul>
       </section>
@@ -174,7 +165,7 @@
             positions: [5, 10, 5],
             force: 10,
             shape: {
-              type: Sphere",
+              type: "Sphere",
               scale: [3, 4, 3]
             }
           }
@@ -228,7 +219,7 @@
         <h2>Applications</h2>
         <ul>
           <li>
-            Over time added features that significantly increased quality
+            Additional features rolled out over time
             <ul>
               <li>Texturing</li>
               <li>Animate component parameters over time</li>
@@ -253,8 +244,8 @@
         <h1>Thanks!</h1>
         <div class="credits">
           <ul>
-            <li><a target="_blank" href="https://twitter.com/thsherif">@thsherif</a></li>
             <li><a href="mailto:tarek@biodigital.com">tarek@biodigital.com</a></li>
+            <li><a target="_blank" href="https://twitter.com/thsherif">@thsherif</a></li>
             <li><a target="_blank" href="https://www.biodigital.com">www.biodigital.com</a></li>
           </ul>
         </div>
@@ -269,7 +260,8 @@
     Reveal.initialize({
       history: true,
       slideNumber: true,
-      controls: false
+      controls: false,
+      transition: "none"
     });
 
     hljs.initHighlightingOnLoad();
