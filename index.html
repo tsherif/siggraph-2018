@@ -136,65 +136,6 @@
       </section>
 
       <section>
-        <h2>Example Creator</h2>
-        <pre>
-        <code class="javascript">
-          // Initialize position to somewhere in defined ellipsoid
-          {
-            type: "SpherePosition",
-            scale: [5, 10, 5],
-            translate: [2, 4, 3],
-            rotate: [20, 30, 0]
-          }
-        </code>
-        </pre>
-      </section>
-
-      <section>
-        <h2>Example Updater</h2>
-        <pre>
-        <code class="javascript">
-          // Apply force towards/away from given point
-          {
-            type: "RadialForce",
-            positions: [5, 10, 5],
-            force: 10,
-            shape: {
-              type: "Sphere",
-              scale: [3, 4, 3]
-            }
-          }
-        </code>
-        </pre>
-      </section>
-
-      <section>
-        <h2>Example Constraint</h2>
-        <pre>
-        <code class="javascript">
-          // Reflect particle velocity if it crosses the plane
-         {
-             type: "ShapeBounce",
-             shape: {
-                 type: "Plane",
-                 rotate: [0, 0, -45],
-                 translate: [-10, -10, 0],
-                 direction: "in"
-             }
-         }
-        </code>
-        </pre>
-      </section>
-
-      <section>
-        <h2>Architecture</h2>
-        <ul>
-          <li>Each component has a minimal function in the sim</li>
-          <li>Allows artists to combine them in expressive ways</li>
-        </ul>
-      </section>
-
-      <section>
         <h2>Current Component List</h2>
         <ul>
           <li>Creators
@@ -221,12 +162,20 @@
       </section>    
 
       <section>
+        <h2>Architecture</h2>
+        <ul>
+          <li>Each component has a minimal function in the sim</li>
+          <li>Allows artists to combine them in expressive ways</li>
+        </ul>
+      </section>
+
+      <section>
         <h2>Applications</h2>
         <ul>
           <li>Initially limited to basic processes and ambient effects</li>
         </ul>
       </section>
-
+      
       <section>
         <div>
           <a href="https://preview.biodigital.com/widgets/default/?m=public_preview/BAY2402234.json" target="_blank">Ambient Particles</a>
