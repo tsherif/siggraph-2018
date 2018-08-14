@@ -61,22 +61,7 @@
         <h2>BioDigital</h2>
         <ul>
           <li>
-            Detailed anatomy visualizations for: 
-            <ul>
-              <li>Education</li>
-              <li>Training</li>
-              <li>Marketing</li>
-            </ul>
-          </li>
-        </ul>
-        <img src="img/human.png">
-      </section>
-
-      <section>
-        <h2>BioDigital</h2>
-        <ul>
-          <li>
-            Clients frequently want to visualize
+            We frequently want to visualize
             <ul>
               <li>Fluid moving through vessels</li>
               <li>Molecular interactions</li>
@@ -87,7 +72,16 @@
       </section>
 
       <section>
-        <video src="video/siggraph-nephron.mp4" controls></video>
+        <h2>Before the Particle System</h2>
+        <ul>
+          <li>Particles would be rendered as low-res spheres</li>
+          <li>Each particle would be manually animated by an artist</li>
+        </ul>
+      </section>
+
+      <section>
+        <a href="">Asthma Inhaler</a>
+        <video src="video/siggraph-asthma.mp4" controls></video>
       </section>
 
       <section>
@@ -104,15 +98,8 @@
       </section>
 
       <section>
-        <h2>Before the Particle System</h2>
-        <ul>
-          <li>Particles would be rendered as low-res spheres</li>
-          <li>Each particle would be manually animated by an artist</li>
-        </ul>
-      </section>
-
-      <section>
-        <video src="video/siggraph-asthma.mp4" controls></video>
+        <a href="">Nephron Activity</a>
+        <video src="video/siggraph-nephron.mp4" controls></video>
       </section>
 
       <section>
@@ -200,6 +187,32 @@
       </section>
 
       <section>
+        <h2>Current Component List</h2>
+        <ul>
+          <li>Creators
+            <ul>
+              <li>cube-position, directional-velocity, point-position, sphere-position, cylinder-position, lifetime, random-velocity</li>
+            </ul>
+          </li>
+          <li>Updaters
+            <ul>
+              <li>age-color-blend, brownian-motion, cylindrical-force, friction, gravity, path, radial-force, sprite-animation, uniform-force</li>
+            </ul>
+          </li>
+          <li>Constraints
+            <ul>
+              <li>lifetime-kill, lifetime-stop, path-kill, path-radius, path-stop, shape-bounce, shape-kill, shape-stop</li>
+            </ul>
+          </li>
+          <li>Shapes 
+            <ul>
+              <li>cube, cylinder, plane, sphere</li>
+            </ul>
+          </li>
+        </ul>
+      </section>    
+
+      <section>
         <h2>Applications</h2>
         <ul>
           <li>Initially limited to basic processes and ambient effects</li>
@@ -207,10 +220,12 @@
       </section>
 
       <section>
+        <a href="">Ambient Particles</a>
         <video src="video/siggraph-ambient.mp4" controls></video>
       </section>
 
       <section>
+        <a href="">EPO Production</a>
         <video src="video/siggraph-basic.mp4" controls></video>
       </section>
 
@@ -222,22 +237,25 @@
             Additional features rolled out over time
             <ul>
               <li>Texturing</li>
-              <li>Animate component parameters over time</li>
+              <li>Animate component parameters</li>
             </ul>
           </li>
         </ul>
       </section>
 
       <section>
+        <a href="https://preview.biodigital.com/widgets/default/?m=preview/test_adam_normoxia_hif_pathway.json" target="_blank">Flame and Smoke</a>
         <video src="video/siggraph-glow.mp4" controls></video>
       </section>
 
       <section>
-        <video src="video/siggraph-beam.mp4" controls></video>
+        <a href="">Lipid Bilayer</a>
+        <video src="video/siggraph-lipid.mp4" controls></video>
       </section>
 
       <section>
-        <video src="video/siggraph-lipid.mp4" controls></video>
+        <a href="https://preview.biodigital.com/widgets/default/?m=preview/test_adam_particle_sprite_sheet.json&engine-version=master" target="_blank">Blood Cell Sprites</a>
+        <video src="video/particles_bloodflow2.mp4" controls></video>
       </section>
 
       <section>
@@ -265,7 +283,6 @@
     });
 
     hljs.initHighlightingOnLoad();
-    
   </script>
 </body>
 </html>
